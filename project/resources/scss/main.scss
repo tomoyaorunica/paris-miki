@@ -1,6 +1,6 @@
-@use 'debug';
 
-@use "reset";
+
+// @use "reset";
 @use 'font';
 @use 'settings';
 
@@ -13,3 +13,5 @@
 // @use 'vendor/swiper';
 
 @use '../../index/scss/top';
+
+@use 'debug';

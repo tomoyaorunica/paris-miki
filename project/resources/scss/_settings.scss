@@ -1,6 +1,26 @@
 @use 'import' as *;
 
-:root {
+html {
+  &.-overscroll-none{
+    overscroll-behavior-y: none;
+  }
+
+  &.-no-scroll{
+    overflow: hidden;
+    touch-action: none;
+  }
+
+  // @include media-pc {
+    // @include font-liquid-full(16);
+    // font-size: max(12px, div(16, $w-pc) * 100vw);
+  // }
+
+}
+
+
+
+.l-container{
+
   --black : #000;
   --white : #fff;
   --bg    : #EBEBEB;
@@ -11,35 +31,12 @@
   --color3 : #88806F;
   --color4 : #6788B0;
   --color5 : #463026;
-}
 
-html {
-  box-sizing: border-box;
-  // scroll-behavior: initial;
-
-  &.-overscroll-none{
-    overscroll-behavior-y: none;
-  }
-
-  &.-no-scroll{
-    // @include media-sp {
-      overflow: hidden;
-      touch-action: none;
-    // }
-  }
-
-  @include media-pc {
-    // @include font-liquid-full(16);
-    // font-size: max(12px, div(16, $w-pc) * 100vw);
-  }
-
-}
-*,*::before,*::after {
-  box-sizing: inherit;
-}
-
-body {
   position:relative;
+
+
+  box-sizing: border-box;
+
 
   color: var(--black);
   background-color: var(--bg);
@@ -58,81 +55,33 @@ body {
   }
   
   @include media-pc {
-    // @include font-rem(16);
+    @include font-rem(16);
+  }
+  
+  img{
+    width: 100%;
+    max-width:100%;
+    height:auto;
+    display: block;
+  }
+  
+  a{
+    color: var(--dark);
+    text-decoration: none;
+  
+    @include media-sp {
+    }
+  
+    @include media-pc {
+    }
   }
 
-}
 
-
-strong,time,video{
-  display: block;
-}
-
-em{
-  color: var(--more);
-  display: inline;
-}
-
-img{
-  width: 100%;
-  max-width:100%;
-  height:auto;
-  display: block;
-}
-
-video{
-  width: 100%;
-  height: auto;
-}
-
-a{
-  color: var(--dark);
-  text-decoration: none;
-
-  @include media-sp {
+  *,*::before,*::after {
+    box-sizing: inherit;
   }
+    
+  ::selection {background: rgba(#333, .2); color: #333;}
+  ::-moz-selection {background: rgba(#333, .2); color: #333;}
 
-  @include media-pc {
-  }
 }
-
-// sup{
-//   position:relative;
-//   top: -.75em;
-//   font-size: 60%;
-//   margin-left: .2em;
-
-//   @include font-en-reg();
-// }
-
-/////////////////////////////////////////////
-// lenis
-// html.lenis, html.lenis body {
-//   height: auto;
-// }
-
-// .lenis.lenis-smooth {
-//   scroll-behavior: auto !important;
-// }
-
-// .lenis.lenis-smooth [data-lenis-prevent] {
-//   overscroll-behavior: contain;
-// }
-
-// .lenis.lenis-stopped {
-//   // overflow: hidden;
-
-//   // スクロールバーは出たままにするとガクッとしないぽい
-//   overflow: auto !important;
-// }
-
-// .lenis.lenis-scrolling iframe {
-//   pointer-events: none;
-// }
-
-  ///////////////////////////////////////////////////////
-/// 
-::selection {background: rgba(#333, .2); color: #333;}
-::-moz-selection {background: rgba(#333, .2); color: #333;}
-
-///////////////////////////////////////////////////////

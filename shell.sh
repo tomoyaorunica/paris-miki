@@ -1,6 +1,13 @@
+
+# ルートの共通ファイルの ./common を /common に変換
+search_string="\.\\/common"
+replace_string="\\/common"
+find ./dist/ -name '*.html' -exec sed -i "" -e "s/$search_string/$replace_string/g" {} \;
+
+
 # copy root common files
 # サイトの共通ファイルをdistにコピー
-cp -R project/_copy_to_dist_root/ dist/common/
+cp -R project/public/common dist/
 
 # move to /service/project/
 # buildしたファイルをdist/service/project/に移動
