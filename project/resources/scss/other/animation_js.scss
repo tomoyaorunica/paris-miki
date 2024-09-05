@@ -1,0 +1,34 @@
+@use '@/scss/import' as *;
+
+[data-inview="slide-in"]{
+
+  visibility: hidden;
+  opacity: 0;
+  
+  will-change: opacity, transform, visibility;
+
+  @include media-sp {
+    transform: translate3d(0,vw(140),0);
+  }
+
+  @include media-pc {
+      transform: translate3d(0,120px,0);
+  }
+
+
+  &.-inview{
+    opacity    : 1;
+    visibility : visible;
+    transform: translate3d(0,0,0);
+
+    $duration : 1s;
+    $delay    : 0s;
+
+    transition :
+        opacity $duration $SineOut,
+        transform $duration $Power3Out,
+        visibility $duration;
+
+    transition-delay : $delay;
+  }
+}

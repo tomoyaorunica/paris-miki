@@ -1,0 +1,17 @@
+@use "@/scss/import" as *;
+
+.p-top{
+  position:relative;
+}
+
+.sec1_kv{
+  position:relative;
+
+  @include media-sp {
+      
+  }
+
+  @include media-pc {
+    
+  }
+}

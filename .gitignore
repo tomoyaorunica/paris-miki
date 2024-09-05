@@ -1,0 +1,45 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+.DS_Store
+.nova
+Thumbs.db
+.htaccess
+
+
+node_modules
+# dist
+*.local
+dist
+_temp_
+_srdb_
+_docs
+__data
+
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+
+
+# wp
+wp-config.php
+/_publish/sys/images/
+/_publish/sys/wp-*
+/_publish/sys/*.php
+/_publish/sys/*.txt
+/_publish/sys/*.html
+/_publish/sys/wp-admin/
+/_publish/sys/wp-includes/
+/_publish/sys/resources/languages/
+/_publish/sys/resources/siteguard/
+/_publish/sys/resources/upgrade/
+/_publish/sys/resources/upgrade-temp-backup/
+/_publish/sys/resources/*.php

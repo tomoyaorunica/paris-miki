@@ -1,0 +1,464 @@
+@use 'sass:math';
+@forward './easing';
+
+////////////////////////////////////////////////////////////
+// サイズ
+$w-pc        : 1440;
+$w-pc-px     : 1440px;
+$w-pc-margin : 20;
+$w-pc-inner : $w-pc - $w-pc-margin * 2; // 1400
+
+$w-sp       : 390;
+$w-sp-inner : 390 - 13 * 2; // 364
+
+$bp-sp : 768px - 1px;
+$bp-pc : 768px;
+
+$w-column1-pc : math.div($w-pc-inner,12);
+
+$w-grid-sp   : 50;
+$w-margin-sp : 13;
+
+$vw: math.div(1, $w-sp);
+
+$txt    : #000;
+
+$grad:linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+
+
+////////////////////////////////////////////////////////////
+// レイアウト
+@mixin media-sp320 {
+    @media screen and (max-width: 320px) {
+        @content;
+    }
+}
+
+@mixin media-sp375 {
+    @media screen and (max-width: 375px) and (max-height: 553px) {
+        @content;
+    }
+}
+
+@mixin media-sp {
+    @media screen and (max-width: $bp-sp) {
+        @content;
+    }
+}
+@mixin sp {
+    @media screen and (max-width: $bp-sp) {
+        @content;
+    }
+}
+
+@mixin media-pc {
+    @media screen and (min-width: $bp-pc) {
+        @content;
+    }
+}
+@mixin pc {
+    @media screen and (min-width: $bp-pc) {
+        @content;
+    }
+}
+@mixin media-tablet {
+    @media screen and (min-width: 1280px) and (max-width: 1281px) {
+        @content;
+    }
+}
+@mixin media-tablet-portrait {
+    @media screen and (min-width: 1280px) and (max-width: 1281px) and (orientation:portrait) {
+        @content;
+    }
+}
+@mixin media-tablet-landscape {
+    @media screen and (min-width: 1280px) and (max-width: 1281px) and (orientation:landscape) {
+        @content;
+    }
+}
+@mixin hover {
+  @media (any-hover: hover) {
+    &:hover {
+      @content;
+    }
+  }
+}
+
+@function div($val1, $val2) {
+    $val1 : strip-unit($val1);
+    $val2 : strip-unit($val2);
+    @return math.div($val1, $val2);
+}
+
+@function per($val1, $val2) {
+    $val1 : strip-unit($val1);
+    $val2 : strip-unit($val2);
+    @return math.div($val1, $val2) * 100%;
+}
+
+@function vw($val) {
+    $val : strip-unit($val);
+    @return $val * $vw * 100vw;
+}
+
+@function vmin($val1, $val2) {
+    $val1 : strip-unit($val1);
+    $val2 : strip-unit($val2);
+    @return math.div($val1, $val2) * 100vmin;
+}
+
+// pxからemに換算
+@function convert-em($size, $font-size: 16) {
+    $size : strip-unit($size);
+    @return math.div($size, $font-size) * 1em;
+}
+@function em($size, $font-size: 16) {
+    $size : strip-unit($size);
+    @return math.div($size, $font-size) * 1em;
+}
+
+// pxからremに換算
+@function convert-rem($size) {
+    $size : strip-unit($size);
+    @return math.div($size, 16) * 1rem;
+}
+@function rem($size) {
+    $size : strip-unit($size);
+    @return math.div($size, 16) * 1rem;
+}
+
+
+// 単位を削除
+@function strip-unit($number) {
+  @if type-of($number) == 'number' and not unitless($number) {
+    @return math.div($number, $number * 0 + 1);
+  }
+  @return $number;
+}
+
+//  ------------------------------
+
+//@example  @include font-base();
+@mixin font-base() {
+  font-family: "Zen Kaku Gothic Antique", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  // @include font-smoothing(false);
+}
+
+//@example  @include font-en-reg();
+@mixin font-en-reg() {
+  font-family: "reross-quadratic", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+
+  @include font-smoothing(false);
+}
+
+
+// .zen-kaku-gothic-antique-medium {
+//   font-family: "Zen Kaku Gothic Antique", sans-serif;
+//   font-weight: 500;
+//   font-style: normal;
+// }
+
+// .zen-kaku-gothic-antique-bold {
+//   font-family: "Zen Kaku Gothic Antique", sans-serif;
+//   font-weight: 700;
+//   font-style: normal;
+// }
+
+// ------------------------------
+
+//@example  @include weight(400);
+@mixin weight($weight: 400) {
+  font-weight: $weight;
+}
+
+//@example  @include font-reg();
+@mixin font-reg() {
+  font-weight: 400;
+  @include font-smoothing(false);
+}
+
+//@example  @include font-bold();
+@mixin font-bold() {
+  font-weight: 700;
+}
+
+//@example  @include font-ex-bold();
+@mixin font-ex-bold() {
+  font-weight: 900;
+}
+
+
+
+//@example  @include font-rem(13, 26);
+@mixin font-rem($size: 24, $height: null) {
+
+  // px付きの場合は削除
+  $size : strip-unit($size);
+
+  font-size: math.div($size, 16) * 1rem;
+
+  @if ($height) {
+    line-height: math.div($height, $size);
+  }
+}
+
+//@example  @include font-liquid(13, 26);
+@mixin font-liquid($size: 16, $height: null) {
+
+  // px付きの場合は削除
+  $size : strip-unit($size);
+
+  // $limit 以下は縮小する
+  $limit    : $w-pc;
+  $limit-px : $limit * 1px;
+
+  font-size: math.div($size, $limit) * 100vw;
+    
+  // @media screen and (max-width: $limit-px) {
+  //   font-size: math.div($size, $limit) * 100vw;
+  // }
+
+  // font-size: math.div($size * $per, 16) * 1rem;
+
+  @if ($height) {
+    line-height: math.div($height, $size);
+  }
+}
+
+//@example  @include font-liquid-large(16, 1440);
+@mixin font-liquid-large($size: 16, $breakpoint: $w-pc) {
+
+  // px付きの場合は削除
+  $size : strip-unit($size);
+
+  // $breakpoint 以上は拡大する
+  $breakpoint    : $w-pc;
+  $breakpoint-px : $breakpoint * 1px;
+
+  font-size: math.div($size, $breakpoint) * 100vw;
+    
+  @media screen and (max-width: $breakpoint-px) {
+    font-size: math.div($size, 16) * 1rem;
+  }
+
+  // font-size: math.div($size * $per, 16) * 1rem;
+
+}
+
+// $breakpoint 以下はフォント・サイズが縮小する
+// ウィンドウサイズが小さいときに縦マージンを縮めたいときなどに使う
+//@example  @include font-liquid-small(16, 1440);
+@mixin font-liquid-small($size: 16, $breakpoint: $w-pc) {
+
+  // px付きの場合は削除
+  $size : strip-unit($size);
+
+  font-size: min(1rem, math.div($size, $breakpoint) * 100vw);
+}
+
+// vw指定でウィンドウサイズに合わせてフォントサイズを変える
+//@example  @include font-liquid-full(13);
+@mixin font-liquid-full($size: 16, $height: null, $breakpoint: $w-pc) {
+
+  $size : strip-unit($size);
+  font-size: math.div($size, $breakpoint) * 100vw;
+
+  @if ($height) {
+    line-height: math.div($height, $size);
+  }
+}
+
+//@example  @include font-vw(13, 26);
+@mixin font-vw($size: 24, $height: null) {
+
+    // px付きの場合は削除
+    $size : strip-unit($size);
+
+    font-size: math.div($size, $w-sp) * 100vw;
+    @if ($height) {
+        line-height: math.div($height, $size);
+    }
+}
+
+//@example  @include lh(50 / 30);
+@mixin lh($param1, $param2) {
+    line-height: math.div($param1, $param2);
+}
+//@example  @include ls(100);
+@mixin ls($param) {
+    letter-spacing: $param * 0.001em;
+}
+
+//@example  @include ls-px(1);
+@mixin ls-px($font-size-px) {
+    letter-spacing: div($font-size-px, 16px) * 1rem;
+}
+
+//@example  @include ls-per(10);
+@mixin ls-per($param) {
+    letter-spacing: $param * .01em;
+}
+
+//@example  @include ls-em(1);
+@mixin ls-em($letter-spacing-px: 0, $font-size-px: 16) {
+
+  $letter-spacing-px : strip-unit($letter-spacing-px);
+  $font-size-px      : strip-unit($font-size-px);
+
+  letter-spacing: div($letter-spacing-px, $font-size-px) * 1em;
+}
+
+
+////////////////////////////////////////////////////////////
+// その他ユーティリティ系
+
+//@example  @include justify();
+@mixin justify() {
+    text-align: justify;
+}
+
+//@example  @include fontFeatureSettings();
+@mixin fontFeatureSettings($ls:null) {
+    font-feature-settings: 'palt';
+    @if ($ls) {
+      letter-spacing: $ls;
+    }
+}
+
+//@example  @include fontFeatureSettings2();
+@mixin fontFeatureSettings2() {
+  font-feature-settings: 'pwid';
+}
+
+//@example  @include font-smoothing();
+@mixin font-smoothing($value: antialiased) {
+    @if $value == antialiased {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    } @else {
+        -webkit-font-smoothing: subpixel-antialiased;
+        -moz-osx-font-smoothing: auto;
+    }
+}
+
+//@example  @include gpu();
+@mixin gpu() {
+    will-change: transform;
+}
+
+//@example  @include pointerEventsNone(false);
+@mixin pointerEventsNone($bool:true) {
+  @if ($bool) {
+    pointer-events: none;
+  }
+  @else{
+    pointer-events: auto;
+  }
+}
+
+//@example  @include userSelectNone(false);
+@mixin userSelectNone($bool:true) {
+  @if ($bool) {
+    user-select: none;
+    -webkit-touch-callout: none; // Disable Android and iOS callouts
+  }
+  @else{
+    user-select: auto;
+    -webkit-touch-callout: default; // Disable Android and iOS callouts
+  }
+}
+
+//@example  @include scrolling();
+@mixin scrolling() {
+    -webkit-overflow-scrolling: touch;
+}
+
+//@example  @include indent();
+@mixin indent($val: 1em) {
+    text-indent: -$val;
+    padding-left: $val;
+}
+
+//@example  @include clamp(2);
+@mixin clamp($line) {
+    display: -webkit-box;
+    -webkit-line-clamp: $line;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+//@example  @include appearance-reset();
+@mixin appearance-reset() {
+    margin: 0;
+    padding: 0;
+    background: none;
+    border: none;
+    border-radius: 0;
+    outline: none;
+    appearance: none;
+}
+
+//@example  @include height-var();
+// js側で実行 -> document.documentElement.style.setProperty('--vh', `${Event.size.wh}px`);
+@mixin height-var() {
+    height: var(--vh, 100vh);
+}
+
+// dvh : safari 15.4↑
+@mixin height-var-ih() {
+    height: var(--ih, 100vh);
+    height: 100dvh;
+}
+@mixin height-var-maxh() {
+    height: var(--maxh, 100vh);
+    height: 100dvh;
+}
+
+@mixin center-sp() {
+  width: vw($w-sp-inner);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@mixin center-pc($max: null) {
+  width: per($w-pc-inner, $w-pc);
+  // max-width: 2000px;
+  margin-left  : auto;
+  margin-right : auto;
+
+  @if ($max) {
+    $max : strip-unit($max);
+    max-width: $max * 1px;
+  }
+}
+
+//@example  @include clip-round(30px);
+@mixin clip-round($val) {
+  clip-path: inset(0 round $val);
+}
+
+
+////////////////////////////////////////////////////////////
+// サイト独自設定
+
+//@forward './easing' がここで使えないので使う分だけ直接記述
+
+// $SineOut   : cubic-bezier(0.39, 0.575, 0.565, 1);
+// $Power1Out : cubic-bezier(0.25, 0.46, 0.45, 0.94);
+// $Power2Out : cubic-bezier(0.215, 0.61, 0.355, 1);
+// $Power3Out : cubic-bezier(0.165, 0.84, 0.44, 1);
+// $Power4Out : cubic-bezier(0.23, 1, 0.32, 1);
+// $ExpoOut   : cubic-bezier(0.19, 1, 0.22, 1);
+
+// $SineInOut : cubic-bezier(0.445, 0.05, 0.55, 0.95);
+
+// layout --------------------------
+
+@mixin grid-sp($num) {
+  width: vw($w-grid-sp * $num + $w-margin-sp * ($num - 1));
+}
+

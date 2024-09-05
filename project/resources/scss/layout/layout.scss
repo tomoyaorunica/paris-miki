@@ -1,0 +1,27 @@
+@use '@/scss/import' as *;
+
+main{
+  position:relative;
+
+  @include media-sp {
+  }
+
+  @include media-pc {
+    // @include font-liquid-full(16);
+  }
+}
+
+.l-container{
+  position:relative;
+
+  // stickyが効かなくなるので注意
+  overflow: hidden;
+
+  @include media-sp {
+    
+  }
+
+  @include media-pc {
+    
+  }
+}

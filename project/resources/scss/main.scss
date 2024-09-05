@@ -1,0 +1,15 @@
+@use 'debug';
+
+@use "reset";
+@use 'font';
+@use 'settings';
+
+@use 'utils/utility';
+@use 'component/component';
+@use 'other/other';
+@use 'layout/layout';
+@use 'project/project';
+
+// @use 'vendor/swiper';
+
+@use '../../index/scss/top';

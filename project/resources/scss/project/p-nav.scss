@@ -1,0 +1,29 @@
+@use "@/scss/import" as *;
+
+.p-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+
+
+  ul{
+
+  }
+
+  li{
+
+
+  }
+}
+
+.c-blank{
+  @include media-sp {
+    
+  }
+
+  @include media-pc {
+    width: em(24);
+    height: em(24);
+  }
+}

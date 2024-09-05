@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+{{> cmn_head 
+  title  = ''
+  desc   = ''
+  url    = ''
+  is_top = true
+}}
+
+<link rel="stylesheet" href="/resources/scss/main.scss?{{now}}">
+
+</head>
+<body>
+  <div class="l-container">
+    {{> cmn_primary }}
+
+
+    <img src="/public/assets/img/meta/ogp.png" alt="">
+    
+    <main>
+      <div class="p-top">
+        {{> index/1_kv }}
+      </div>
+    </main>
+  </div>
+  
+  <script type="module" src="/resources/js/main.js?{{now}}"></script>
+</body>
+</html>

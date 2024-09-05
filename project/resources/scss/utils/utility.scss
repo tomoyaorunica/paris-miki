@@ -1,0 +1,8 @@
+@use '@/scss/import' as *;
+
+.u-show-sp{ display: block !important; }
+.u-show-pc{ display: none !important; }
+@media screen and (min-width: $bp-pc) {
+    .u-show-sp{ display: none !important; }
+    .u-show-pc{ display: block !important; }
+}
