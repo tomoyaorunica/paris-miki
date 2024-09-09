@@ -7,27 +7,27 @@
   url   = ''
 }}
 
-<!-- <link rel="stylesheet" href="/resources/scss/main.scss?{{now}}"> -->
+<link rel="stylesheet" href="/resources/scss/main.scss?{{now}}">
 
 </head>
 <body>
-
+  <div id="pagetop" class="container news">
   {{> domain_common/inc_common_header_no_gtm }}
   {{!-- domain_common/inc_common_header --}}
   {{> domain_common/inc_common_floatNav }}
 
   <main class="l-container">
-    {{> cmn_primary }}
 
-    <img src="/assets/img/meta/ogp.png" alt="">
-    
     <div class="p-top">
       {{> index/1_kv }}
+      {{> index/2_sec }}
+      {{> index/3_sec }}
+      {{> index/4_sec }}
     </div>
   </main>
   
   {{> domain_common/inc_common_footer }}
-  
+  </div>
   <script type="module" src="/resources/js/main.js?{{now}}"></script>
 </body>
 </html>

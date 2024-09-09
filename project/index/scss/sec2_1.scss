@@ -1,0 +1,289 @@
+@use "@/scss/import" as *;
+
+
+.p-top-sec2{
+
+  $w-pc : 1024;
+  
+  .p-top-sec2__block1{
+    @include media-sp {
+      
+    }
+  
+    @include media-pc {
+      padding-top: rem(200);
+      margin-bottom: rem(128);
+    }
+
+    h2{
+      @include media-sp {
+      
+      }
+    
+      @include media-pc {
+        // width: rem(546);
+        width: per(546, $w-pc);
+        margin:0 auto rem(200);
+      }
+    }
+
+    .p-top-sec2__pop{
+      @include media-sp {
+        
+      }
+    
+      @include media-pc {
+      }
+    }
+
+    .p-top-sec2__pop__title{
+      @include media-sp {
+        
+      }
+    
+      @include media-pc {
+        // width: rem(701);
+        width: per(701, $w-pc);
+        margin:0 auto rem(64);
+      }
+    }
+
+    .p-top-sec2__pop__wrapper{
+      position:relative;
+
+      @include media-sp {
+        
+      }
+    
+      @include media-pc {
+        margin-bottom: rem(122);
+      }
+
+      &::before {
+        content: "";
+        display: block;
+        padding-top: per(576, 1024);
+      }
+
+      >div{
+        position: absolute;
+      }
+    }
+
+    .pop1{
+      @include media-sp {
+        
+      }
+    
+      @include media-pc {
+        width: per(292 + 4, $w-pc);
+        top: 0;
+        left: 0;
+      }
+    }
+
+    .pop2{
+      @include media-sp {
+        
+      }
+    
+      @include media-pc {
+        width: per(292 + 4, $w-pc);
+        top: 0;
+        left: per(360, $w-pc);
+      }
+    }
+
+    .pop3{
+      @include media-sp {
+        
+      }
+    
+      @include media-pc {
+        width: per(292 + 4, $w-pc);
+        top: 0;
+        right: 0;
+      }
+    }
+
+    .pop4{
+      @include media-sp {
+        
+      }
+    
+      @include media-pc {
+        width: per(292 + 4, $w-pc);
+        top: 35%;
+        left: per(180, $w-pc);
+      }
+    }
+
+    .pop5{
+      @include media-sp {
+        
+      }
+    
+      @include media-pc {
+        width: per(292 + 4, $w-pc);
+        top: 34.5%;
+        left: per(542, $w-pc);
+      }
+    }
+
+    .pop6{
+      @include media-sp {
+        
+      }
+    
+      @include media-pc {
+        width: per(292 + 4, $w-pc);
+        bottom: 0;
+        left: 0;
+      }
+    }
+
+    .pop7{
+      @include media-sp {
+        
+      }
+    
+      @include media-pc {
+        width: per(298 + 4, $w-pc);
+        bottom: 0;
+        left: per(360, $w-pc);
+      }
+    }
+
+    .pop8{
+      @include media-sp {
+        
+      }
+    
+      @include media-pc {
+        width: per(292 + 4, $w-pc);
+        bottom: 0;
+        right: 0;
+      }
+    }
+  }
+
+
+  .p-top-sec2__pop__desc{
+    @include media-sp {
+      
+    }
+  
+    @include media-pc {
+      text-align: center;
+    }
+
+    >p{
+      @include media-sp {
+      
+      }
+    
+      @include media-pc {
+        @include PC-Medium-statement();
+        margin-bottom: rem(24);
+      }
+
+      &.small{
+
+        @include media-sp {
+      
+        }
+      
+        @include media-pc {
+          @include PC-Regular();
+          margin-bottom: rem(60);
+        }
+      }
+    }
+
+    .border-box{
+      background-color: var(--white);
+      @include media-sp {
+        
+      }
+    
+      @include media-pc {
+        border: 4px solid var(--black);
+        padding-bottom: rem(60);
+      }
+
+      img{
+        @include media-sp {
+      
+        }
+      
+        @include media-pc {
+          margin-bottom: rem(20);
+        }
+      }
+
+      p{
+        @include media-sp {
+        
+        }
+      
+        @include media-pc {
+          @include PC-Medium-statement();
+        }
+  
+        .underline{
+          position:relative;
+          @include media-sp {
+        
+          }
+        
+          @include media-pc {
+            
+          }
+
+          &::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--black);
+          }
+        }
+
+        .marker{
+          position:relative;
+          @include media-sp {
+        
+          }
+        
+          @include media-pc {
+            margin-right: .5em;
+          }
+          >span{
+            position:relative;
+
+          }
+          &::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--yellow);
+            z-index: 0;
+            @include media-sp {
+      
+            }
+          
+            @include media-pc {
+              height: rem(12);
+            }
+          }
+        }
+      }
+    }
+
+  }
+}

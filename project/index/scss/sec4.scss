@@ -1,0 +1,96 @@
+@use "@/scss/import" as *;
+
+
+.p-top-sec4{
+
+  $w-pc : 1024;
+
+
+  @include media-sp {
+      
+  }
+
+  @include media-pc {
+    background-image : url(/assets/img/common/bg_mosaic_blue.jpg);
+    background-size  : 100% auto;
+    background-repeat  : repeat-y;
+    background-position: center top;
+
+    padding-top: rem(128);
+    padding-bottom: rem(64);
+  }
+
+  
+  .p-top-sec4__inner{
+    @include media-sp {
+      
+    }
+  
+    @include media-pc {
+      width: 84%;
+      max-width: 1024px;
+      margin:0 auto;
+    }
+
+    h2{
+      @include media-sp {
+      
+      }
+    
+      @include media-pc {
+        width: per(594, $w-pc);
+        margin:0 auto rem(64);
+      }
+    }
+
+    .p-top-sec4__pd{
+      @include media-sp {
+      
+      }
+    
+      @include media-pc {
+        width: per(324, $w-pc);
+        margin:0 auto rem(64);
+      }
+    }
+
+    .p-top-sec4__link{
+      background-color: var(--blue);
+      @include media-sp {
+      
+      }
+    
+      @include media-pc {
+        border-radius: rem(16);
+        padding: rem(32) per(64, $w-pc);
+      }
+
+      .c-btn-round2{
+        @include media-sp {
+          
+        }
+      
+        @include media-pc {
+          margin-bottom: rem(17);
+        }
+      }
+
+
+      small{
+        display: block;
+        color: var(--white-semi);
+        text-align: center;
+        font-weight: 400;
+
+        @include media-sp {
+      
+        }
+      
+        @include media-pc {
+          @include font-rem(0.75rem, 1.125rem);
+        }
+      }
+    }
+  }
+  
+}

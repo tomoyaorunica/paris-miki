@@ -21,22 +21,18 @@ html {
 
 .l-container{
 
-  --black : #000;
-  --white : #fff;
-  --bg    : #EBEBEB;
-  --gray  : #D0D0D0;
+  --black  : #000;
+  --white  : #fff;
+  --bg     : #fff;
+  --yellow : #ff0;
+  --blue   : #014099;
 
-  --color1 : #6D3285;
-  --color2 : #249796;
-  --color3 : #88806F;
-  --color4 : #6788B0;
-  --color5 : #463026;
+  --white-semi : #DDD;
+
 
   position:relative;
 
-
   box-sizing: border-box;
-
 
   color: var(--black);
   background-color: var(--bg);
@@ -55,7 +51,10 @@ html {
   }
   
   @include media-pc {
-    @include font-rem(16);
+    // @include font-rem(1);
+
+    // bodyが62.5%なので100%換算になるようにする -> bodyに書いてあったのでここで指定なし
+    // font-size: 1.6rem;
   }
   
   img{
@@ -81,7 +80,7 @@ html {
     box-sizing: inherit;
   }
     
-  ::selection {background: rgba(#333, .2); color: #333;}
-  ::-moz-selection {background: rgba(#333, .2); color: #333;}
+  ::selection {background: rgba(#014099, .2); color: #000;}
+  ::-moz-selection {background: rgba(#014099, .2); color: #000;}
 
 }

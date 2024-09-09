@@ -107,24 +107,18 @@ $grad:linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098a
     @return math.div($val1, $val2) * 100vmin;
 }
 
-// pxからemに換算
-@function convert-em($size, $font-size: 16) {
-    $size : strip-unit($size);
-    @return math.div($size, $font-size) * 1em;
-}
+// このサイト用に 10px にしている（通常は 16px が基本）
 @function em($size, $font-size: 16) {
     $size : strip-unit($size);
+    // @return $size * .0625em;
+
     @return math.div($size, $font-size) * 1em;
 }
-
-// pxからremに換算
-@function convert-rem($size) {
-    $size : strip-unit($size);
-    @return math.div($size, 16) * 1rem;
-}
+// このサイト用に 10px にしている（通常は 16px が基本）
 @function rem($size) {
     $size : strip-unit($size);
-    @return math.div($size, 16) * 1rem;
+    @return $size * .1rem;
+    // @return math.div($size, 16) * 1rem;
 }
 
 
@@ -140,21 +134,24 @@ $grad:linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098a
 
 //@example  @include font-base();
 @mixin font-base() {
-  font-family: "Zen Kaku Gothic Antique", sans-serif;
-  font-weight: 500;
+  font-family: "Noto Sans JP", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
   font-style: normal;
   // @include font-smoothing(false);
 }
 
+// <uniquifier>: Use a unique and descriptive class name
+// <weight>: Use a value from 100 to 900
+
+
 //@example  @include font-en-reg();
 @mixin font-en-reg() {
-  font-family: "reross-quadratic", sans-serif;
-  font-weight: 400;
+  font-family: "Roboto Condensed", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
   font-style: normal;
-
-  @include font-smoothing(false);
 }
-
 
 // .zen-kaku-gothic-antique-medium {
 //   font-family: "Zen Kaku Gothic Antique", sans-serif;
@@ -186,25 +183,37 @@ $grad:linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098a
   font-weight: 700;
 }
 
-//@example  @include font-ex-bold();
-@mixin font-ex-bold() {
-  font-weight: 900;
-}
-
-
-
-//@example  @include font-rem(13, 26);
-@mixin font-rem($size: 24, $height: null) {
+// このサイト用に rem を渡す
+//@example  @include font-rem(1rem, 1.5rem, 0.1rem);
+@mixin font-rem($size: 1rem, $height: null, $letter-spacing: null) {
 
   // px付きの場合は削除
   $size : strip-unit($size);
-
-  font-size: math.div($size, 16) * 1rem;
+  font-size: $size * 16 / 10 * 1rem;
 
   @if ($height) {
+    $height : strip-unit($height);
     line-height: math.div($height, $size);
   }
+
+  @if ($letter-spacing) {
+    $letter-spacing : strip-unit($letter-spacing);
+    letter-spacing: $letter-spacing * 16 / 10 * 1rem;
+  }
 }
+
+// //@example  @include font-rem(13, 26);
+// @mixin font-rem($size: 24, $height: null) {
+
+//   // px付きの場合は削除
+//   $size : strip-unit($size);
+
+//   font-size: math.div($size, 16) * 1rem;
+
+//   @if ($height) {
+//     line-height: math.div($height, $size);
+//   }
+// }
 
 //@example  @include font-liquid(13, 26);
 @mixin font-liquid($size: 16, $height: null) {
@@ -458,7 +467,36 @@ $grad:linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098a
 
 // layout --------------------------
 
-@mixin grid-sp($num) {
-  width: vw($w-grid-sp * $num + $w-margin-sp * ($num - 1));
+
+//@example  @include PC-Medium-statement();
+@mixin PC-Medium-statement() {
+  @include font-rem(1.5rem, 2.7rem, 0.24rem);
+  font-weight: 700;
 }
 
+//@example  @include PC-Regular();
+@mixin PC-Regular() {
+  @include font-rem(1rem, 1.7rem, 0.08rem);
+  font-weight: 500;
+}
+
+//@example  @include PC-Large();
+@mixin PC-Large() {
+  @include font-rem(2rem, 2.4rem, 0.16rem);
+}
+
+//@example  @include PC-Medium-bold();
+@mixin PC-Medium-bold() {
+  @include font-rem(1.5rem, 2.55rem, 0.12rem);
+}
+
+//@example  @include PC-Regular-Bold();
+@mixin PC-Regular-Bold() {
+  @include font-rem(1rem, 1.7rem, 0.08rem);
+}
+
+//@example  @include PC-Label();
+@mixin PC-Label() {
+  @include font-rem(1.125rem, 1.575rem, 0.09rem);
+  font-weight: 500;
+}

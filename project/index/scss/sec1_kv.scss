@@ -4,7 +4,7 @@
   position:relative;
 }
 
-.sec1_kv{
+.p-top-kv{
   position:relative;
 
   @include media-sp {
@@ -12,6 +12,116 @@
   }
 
   @include media-pc {
+    margin-bottom: rem(64);
+  }
+
+  .p-top-kv__inner{
+    position:relative;
+    @include media-sp {
+      
+    }
+  
+    @include media-pc {
+      padding-top: rem(48);
+      padding-bottom: rem(48);
+      margin-bottom: rem(64);
+      // padding-top: 3.8%;
+      // padding-bottom: 3.8%;
+
+      height: calc(100vh - 90px);
+      min-height: 600px;
+      max-height: 1000px;
+    }
+
+    h1{
+      position:relative;
+      z-index: 1;
+      margin:0 auto;
+      @include media-sp {
+      
+      }
     
+      @include media-pc {
+        // width: per(615, 1280);
+        // max-width: 800px;
+        height: 100%;
+      }
+
+      img{
+        object-fit: contain;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .p-top-kv__img{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+
+      img{
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        object-position: 50% 0%;
+      }
+
+      @include media-sp {
+        
+      }
+    
+      @include media-pc {
+        
+      }
+    }
+  }
+
+  .p-top-kv__lead{
+    @include media-sp {
+      
+    }
+  
+    @include media-pc {
+      width: 84%;
+      max-width: 1000px;
+      margin:0 auto;
+    }
+  }
+
+  p{
+    text-align: center;
+    font-weight: 700;
+
+    @include media-sp {
+      
+    }
+  
+    @include media-pc {
+      @include font-rem(1.5rem, 2.7rem, 0.24rem);
+    }
+  }
+
+  h2{
+    @include media-sp {
+      
+    }
+  
+    @include media-pc {
+      margin-top: rem(44);
+      margin-bottom: rem(60);
+    }
+  }
+
+  .logo-pd{
+    @include media-sp {
+      
+    }
+  
+    @include media-pc {
+      width: per(358, 1001);
+      margin:0 auto;
+    }
   }
 }

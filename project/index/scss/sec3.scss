@@ -1,0 +1,158 @@
+@use "@/scss/import" as *;
+
+
+.p-top-sec3{
+
+  $w-pc : 1024;
+
+
+  @include media-sp {
+      
+  }
+
+  @include media-pc {
+    background-image : url(/assets/img/common/bg_mosaic_navy.jpg);
+    background-size  : 100% auto;
+    background-repeat  : repeat-y;
+    background-position: center top;
+
+    padding-top: rem(128);
+    padding-bottom: rem(128);
+  }
+
+  
+  .p-top-sec3__inner{
+    @include media-sp {
+      
+    }
+  
+    @include media-pc {
+      width: 84%;
+      max-width: 1024px;
+      margin:0 auto;
+    }
+
+    h2{
+      @include media-sp {
+      
+      }
+    
+      @include media-pc {
+        margin-bottom: rem(94);
+      }
+    }
+    
+    .border-box{
+      position:relative;
+      background-color: var(--blue);
+      @include media-sp {
+        
+      }
+    
+      @include media-pc {
+        border: 2px solid var(--white);
+        padding: rem(60) 0 rem(46);
+        margin-bottom: rem(62);
+      }
+
+      &:last-of-type{
+        margin-bottom: 0;
+        &::after {
+          display: none;
+        }
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        margin:0 auto;
+        background-color: var(--white);
+
+        @include media-sp {
+      
+        }
+      
+        @include media-pc {
+          width: 2px;
+          height: rem(62);
+        }
+      }
+
+      .border-box__step{
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin:0 auto;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        background-color: var(--white);
+
+        @include media-sp {
+          
+        }
+      
+        @include media-pc {
+          top: rem(-30);
+          width: per(256, $w-pc);
+          height: rem(60);
+        }
+
+        p{
+          color: var(--blue);
+          text-align: center;
+          @include font-en-reg();
+  
+          @include media-sp {
+          
+          }
+        
+          @include media-pc {
+            @include font-rem(1.75rem, 1.75rem, 0.07rem);
+          }
+        }
+      }
+
+      .border-box__txt{
+        color: var(--white);
+        text-align: center;
+
+        @include media-sp {
+      
+        }
+      
+        @include media-pc {
+          
+        }
+        
+        .txt1{
+          @include media-sp {
+      
+          }
+        
+          @include media-pc {
+            @include PC-Large();
+            margin-bottom: rem(24);
+          }
+        }
+        
+        .txt2{
+          @include media-sp {
+      
+          }
+        
+          @include media-pc {
+            @include PC-Regular();
+            margin-top: rem(14);
+          }
+        }
+      }
+    }
+  }
+  
+}

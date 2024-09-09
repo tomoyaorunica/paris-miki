@@ -1,0 +1,31 @@
+@use "@/scss/import" as *;
+
+
+.p-top-sec2{
+  position:relative;
+
+  @include media-sp {
+    
+  }
+
+  @include media-pc {
+    background-image : url(/assets/img/common/bg_gradation.jpg), url(/assets/img/common/bg_mosaic_blue.jpg);
+    background-size  : 100% auto, 100% auto;
+    background-repeat  : no-repeat, repeat-y;
+    background-position: center top, center top;
+    padding-bottom: rem(128);
+  }
+
+  .p-top-sec2__inner{
+    position:relative;
+    @include media-sp {
+      
+    }
+  
+    @include media-pc {
+      width: 84%;
+      max-width: 1024px;
+      margin:0 auto;
+    }
+  }
+}

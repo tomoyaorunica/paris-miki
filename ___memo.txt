@@ -1,0 +1,23 @@
+
+
+
+{{!-- <img src="/project/public/assets/img/top/sec2/border-txt2_pc.png" alt="" width="948" height="289"> --}}
+
+
+PARIS MIKI Personal Direction
+
+
+
+      width: per(1000, 1280);
+      max-width: 1000px;
+      margin:0 auto;
+
+      // width: per(1000, 1280);
+      width: 84%;
+      max-width: 1000px;
+      margin:0 auto;
+
+      margin-bottom: rem(60);
+
+
+      【最適視界】
