@@ -1,17 +1,16 @@
 import _ from '@/js/utils/Util'
 import GlobalData from '@/js/model/GlobalData'
-import Easing from '@/js/utils/Easing'
 import Event from '@/js/events/Event'
 import DisableCover from '@/js/controller/DisableCover'
 import EventEmitter from '@/js/events/EventEmitter'
 // import IOManager from '@/js/controller/IOManager'
 import Scroll from '@/js/utils/Scroll'
-import Common from '@/js/view/common/Common'
+// import Common from '@/js/view/common/Common'
 
 import Top from '/index/js/Top'
 
 import { gsap } from "gsap"
-import { ScrollTrigger } from "gsap/ScrollTrigger"
+// import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { ScrollToPlugin } from "gsap/ScrollToPlugin"
 
 export default class Main
@@ -23,15 +22,15 @@ export default class Main
     //-------------------------
 
     // breakpointをまたいだらリロードする
-    window.matchMedia("(max-width:768px)").addEventListener("change", () => {
-      window.location.reload()
-    })
+    // window.matchMedia("(max-width:768px)").addEventListener("change", () => {
+    //   window.location.reload()
+    // })
     
     GlobalData.setViewFlag()
 
     this.setTabletViewport()
-    this.setLoadHandler()
-    this.checkAnchor()
+    // this.setLoadHandler()
+    // this.checkAnchor()
     Event.add(this.listen.bind(this))
     
   }
@@ -69,7 +68,7 @@ export default class Main
     Event.resize()
 
     new Top()
-    new Common()
+    // new Common()
     
     this.scrollTrigger()
   }
@@ -82,73 +81,73 @@ export default class Main
   }
 
 
-  setLoadHandler()
-  {
-    this.isLoaded = false
+  // setLoadHandler()
+  // {
+  //   this.isLoaded = false
 
-    let flags = {
-      dom  : false,
-    }
+  //   let flags = {
+  //     dom  : false,
+  //   }
     
-    EventEmitter.ee.on("ready", type =>
-    {
-      flags[type] = true
+  //   EventEmitter.ee.on("ready", type =>
+  //   {
+  //     flags[type] = true
 
-      // console.log(flags)
+  //     // console.log(flags)
 
-      if(flags.dom)
-      {
-        if(this.isLoaded) return
-        this.isLoaded = true
+  //     if(flags.dom)
+  //     {
+  //       if(this.isLoaded) return
+  //       this.isLoaded = true
         
-        Event.resize()
+  //       Event.resize()
 
-        this.checkAnchor()
+  //       this.checkAnchor()
 
-        _.delayedCall(() =>
-        {
-          EventEmitter.ee.emit("loaded:once")
+  //       _.delayedCall(() =>
+  //       {
+  //         EventEmitter.ee.emit("loaded:once")
 
-          if(!GlobalData.hasLoading)
-          {
-            EventEmitter.ee.emit("loading-end")
-          }
+  //         if(!GlobalData.hasLoading)
+  //         {
+  //           EventEmitter.ee.emit("loading-end")
+  //         }
 
           
-        }, 1/30)
-      }
-    })
-  }
+  //       }, 1/30)
+  //     }
+  //   })
+  // }
 
 
   ////////////////////////////////////////////////////////////
 
-  checkAnchor()
-  {
-    // if(GlobalData.isSPView) return
+  // checkAnchor()
+  // {
+  //   // if(GlobalData.isSPView) return
     
-    const hash = location.hash;
+  //   const hash = location.hash;
 
-    if(hash)
-    {
-      const target = _.el(hash.replace(/#/g, ""))
+  //   if(hash)
+  //   {
+  //     const target = _.el(hash.replace(/#/g, ""))
 
-      if(target)
-      {
-        let wait = .6
+  //     if(target)
+  //     {
+  //       let wait = .6
 
-        gsap.to(window, { duration: .1, scrollTo: 0 });
+  //       gsap.to(window, { duration: .1, scrollTo: 0 });
 
-        _.delayedCall(() =>
-        {
-          const top = target.getBoundingClientRect().top
-          let   dur = Math.min(1, Math.abs(top) * .0004)
-          // console.log(top, dur)
-          gsap.to(window, { duration: dur, scrollTo: target, ease:"power1.inOut" });
-        }, wait)
-      }
-    }
-  }
+  //       _.delayedCall(() =>
+  //       {
+  //         const top = target.getBoundingClientRect().top
+  //         let   dur = Math.min(1, Math.abs(top) * .0004)
+  //         // console.log(top, dur)
+  //         gsap.to(window, { duration: dur, scrollTo: target, ease:"power1.inOut" });
+  //       }, wait)
+  //     }
+  //   }
+  // }
 
   ////////////////////////////////////////////////////////////
   
@@ -243,7 +242,7 @@ export default class Main
     if(GlobalData.isTablet)
     {
       _.addClass(document.body, "-tablet")
-      document.querySelector("meta[name='viewport']").setAttribute("content", "width=1440")
+      document.querySelector("meta[name='viewport']").setAttribute("content", "width=1280")
     }
   }
 }

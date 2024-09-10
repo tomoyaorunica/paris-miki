@@ -21,3 +21,7 @@ PARIS MIKI Personal Direction
 
 
       【最適視界】
+
+
+
+      width: per(474, $w-pc);
