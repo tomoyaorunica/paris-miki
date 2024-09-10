@@ -7,7 +7,8 @@
   
   .p-top-sec2__block1{
     @include media-sp {
-      
+      padding-top: vw(100);
+      margin-bottom: vw(64);
     }
   
     @include media-pc {
@@ -17,7 +18,8 @@
 
     h2{
       @include media-sp {
-      
+        width: vw(273);
+        margin:0 auto vw(100);
       }
     
       @include media-pc {
@@ -38,7 +40,8 @@
 
     .p-top-sec2__pop__title{
       @include media-sp {
-        
+        width: vw(335);
+        margin:0 auto vw(32);
       }
     
       @include media-pc {
@@ -52,21 +55,34 @@
       position:relative;
 
       @include media-sp {
-        
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        width: vw(317);
+        margin:0 auto vw(48);
       }
     
       @include media-pc {
         margin-bottom: rem(122);
+
+        &::before {
+          content: "";
+          display: block;
+          padding-top: per(576, 1024);
+        }
       }
 
-      &::before {
-        content: "";
-        display: block;
-        padding-top: per(576, 1024);
-      }
 
       >div{
-        position: absolute;
+        @include media-sp {
+          width: vw(149);
+          margin-bottom: vw(16);
+        }
+      
+        @include media-pc {
+          position: absolute;
+        }
       }
     }
 
@@ -169,17 +185,18 @@
 
 
   .p-top-sec2__pop__desc{
+    text-align: center;
     @include media-sp {
       
     }
   
     @include media-pc {
-      text-align: center;
     }
 
     >p{
       @include media-sp {
-      
+        @include SP-Medium-statement();
+        margin-bottom: vw(26);
       }
     
       @include media-pc {
@@ -190,7 +207,8 @@
       &.small{
 
         @include media-sp {
-      
+          @include SP-Regular();
+          margin-bottom: vw(30);
         }
       
         @include media-pc {
@@ -203,7 +221,8 @@
     .border-box{
       background-color: var(--white);
       @include media-sp {
-        
+        border: vw(3) solid var(--black);
+        padding: vw(13) vw(16) vw(14);
       }
     
       @include media-pc {
@@ -213,7 +232,7 @@
 
       img{
         @include media-sp {
-      
+          margin-bottom: vw(18);
         }
       
         @include media-pc {
@@ -223,7 +242,7 @@
 
       p{
         @include media-sp {
-        
+          @include SP-Medium-statement();
         }
       
         @include media-pc {
@@ -246,8 +265,14 @@
             bottom: 0;
             left: 0;
             width: 100%;
-            height: 2px;
             background-color: var(--black);
+            @include media-sp {
+              height: 1px;
+            }
+          
+            @include media-pc {
+              height: 2px;
+            }
           }
         }
 
@@ -268,13 +293,12 @@
             content: "";
             position: absolute;
             bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 2px;
+            left: 4%;
+            width: 92%;
             background-color: var(--yellow);
             z-index: 0;
             @include media-sp {
-      
+              height: vw(6);
             }
           
             @include media-pc {

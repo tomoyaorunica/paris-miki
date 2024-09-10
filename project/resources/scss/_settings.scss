@@ -43,11 +43,12 @@ html {
   -webkit-tap-highlight-color:rgba(0, 0, 0, 0);
 
   @include font-base();
-  @include fontFeatureSettings();
+  // @include fontFeatureSettings();
   @include font-smoothing();
     
   @include media-sp {
-    @include font-vw(14);
+    @include font-vw(16);
+    line-height: 1;
   }
   
   @include media-pc {

@@ -5,11 +5,15 @@
   position:relative;
 
   @include media-sp {
-    
+    background-image : url(/assets/img/common/bg_gradation_sp.jpg), url(/assets/img/common/bg_mosaic_blue_sp.jpg);
+    background-size  : 100% auto, 100% auto;
+    background-repeat  : no-repeat, repeat-y;
+    background-position: center top, center top;
+    padding-bottom: vw(64);
   }
 
   @include media-pc {
-    background-image : url(/assets/img/common/bg_gradation.jpg), url(/assets/img/common/bg_mosaic_blue.jpg);
+    background-image : url(/assets/img/common/bg_gradation_pc.jpg), url(/assets/img/common/bg_mosaic_blue_pc.jpg);
     background-size  : 100% auto, 100% auto;
     background-repeat  : no-repeat, repeat-y;
     background-position: center top, center top;
@@ -19,7 +23,7 @@
   .p-top-sec2__inner{
     position:relative;
     @include media-sp {
-      
+      @include center-sp();
     }
   
     @include media-pc {

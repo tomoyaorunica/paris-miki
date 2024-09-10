@@ -29,7 +29,7 @@ export default class Main
     GlobalData.setViewFlag()
 
     this.setTabletViewport()
-    // this.setLoadHandler()
+    this.setLoadHandler()
     // this.checkAnchor()
     Event.add(this.listen.bind(this))
     
@@ -81,43 +81,35 @@ export default class Main
   }
 
 
-  // setLoadHandler()
-  // {
-  //   this.isLoaded = false
+  setLoadHandler()
+  {
+    this.isLoaded = false
 
-  //   let flags = {
-  //     dom  : false,
-  //   }
+    let flags = {
+      dom  : false,
+    }
     
-  //   EventEmitter.ee.on("ready", type =>
-  //   {
-  //     flags[type] = true
+    EventEmitter.ee.on("ready", type =>
+    {
+      flags[type] = true
 
-  //     // console.log(flags)
+      // console.log(flags)
 
-  //     if(flags.dom)
-  //     {
-  //       if(this.isLoaded) return
-  //       this.isLoaded = true
+      if(flags.dom)
+      {
+        if(this.isLoaded) return
+        this.isLoaded = true
         
-  //       Event.resize()
+        Event.resize()
+        // this.checkAnchor()
 
-  //       this.checkAnchor()
-
-  //       _.delayedCall(() =>
-  //       {
-  //         EventEmitter.ee.emit("loaded:once")
-
-  //         if(!GlobalData.hasLoading)
-  //         {
-  //           EventEmitter.ee.emit("loading-end")
-  //         }
-
-          
-  //       }, 1/30)
-  //     }
-  //   })
-  // }
+        _.delayedCall(() =>
+        {
+          EventEmitter.ee.emit("loaded:once")
+        }, 1/30)
+      }
+    })
+  }
 
 
   ////////////////////////////////////////////////////////////

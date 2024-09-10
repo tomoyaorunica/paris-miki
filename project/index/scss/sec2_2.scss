@@ -15,7 +15,7 @@
 
     h3{
       @include media-sp {
-      
+        margin-bottom: vw(32);
       }
     
       @include media-pc {
@@ -23,11 +23,24 @@
         margin:0 auto rem(64);
       }
 
+
+
+      img{
+        @include media-sp {
+          width: vw(221);
+          margin:0 auto vw(7);
+        }
+      
+        @include media-pc {
+          
+        }
+      }
+
       span{
         text-align: center;
         display: block;
         @include media-sp {
-      
+          @include SP-Medium-bold();
         }
       
         @include media-pc {
@@ -40,7 +53,12 @@
     .border-box1{
       background-color: var(--white);
       @include media-sp {
-        
+        border: vw(3) solid var(--blue);
+        padding: vw(30) 0 vw(28);
+
+        text-align: center;
+
+        margin-bottom: vw(32);
       }
     
       @include media-pc {
@@ -54,7 +72,8 @@
 
       .border-box1__img{
         @include media-sp {
-      
+          width: vw(199);
+          margin:0 auto vw(8);
         }
       
         @include media-pc {
@@ -67,7 +86,7 @@
         color: var(--blue);
 
         @include media-sp {
-        
+          @include SP-Medium-bold();
         }
       
         @include media-pc {
@@ -78,7 +97,6 @@
           position:relative;
           text-align: center;
           @include media-sp {
-        
           }
         
           @include media-pc {
@@ -89,8 +107,9 @@
 
         &.border-box1__txt2{
           position:relative;
+          white-space: nowrap;
           @include media-sp {
-        
+            margin-top: vw(8);
           }
         
           @include media-pc {
@@ -107,7 +126,8 @@
       text-align: center;
 
       @include media-sp {
-        
+        width: vw(311);
+        margin:0 auto vw(71);
       }
     
       @include media-pc {
@@ -117,7 +137,8 @@
 
       .illust-block__txt1{
         @include media-sp {
-          
+          @include SP-Medium-bold();
+          margin-bottom: vw(8);
         }
       
         @include media-pc {
@@ -127,7 +148,9 @@
       }
       .illust-block__txt2{
         @include media-sp {
-          
+          @include SP-Medium-bold();
+          margin-top: vw(8);
+          margin-bottom: vw(8);
         }
       
         @include media-pc {
@@ -138,7 +161,8 @@
       }
       .illust-block__txt3{
         @include media-sp {
-          
+          @include SP-Regular();
+          margin-bottom: vw(32);
         }
       
         @include media-pc {
@@ -148,7 +172,8 @@
       }
       .illust-block__arrow{
         @include media-sp {
-          
+          width: vw(114);
+          margin:0 auto;
         }
       
         @include media-pc {
@@ -163,7 +188,9 @@
       position:relative;
       background-color: var(--white);
       @include media-sp {
-        
+        border: vw(3) solid var(--blue);
+        padding: vw(61) 0 vw(32);
+        margin-bottom: vw(81);
       }
     
       @include media-pc {
@@ -182,7 +209,8 @@
         background-color: var(--blue);
 
         @include media-sp {
-      
+          width: vw(3);
+          height: vw(83);
         }
       
         @include media-pc {
@@ -204,7 +232,10 @@
         background-color: var(--blue);
 
         @include media-sp {
-          
+          top: vw(-42);
+          width: vw(300);
+          height: vw(80);
+          border-radius: vw(8);
         }
       
         @include media-pc {
@@ -219,7 +250,7 @@
           text-align: center;
   
           @include media-sp {
-          
+            @include SP-Medium-bold();
           }
         
           @include media-pc {
@@ -238,7 +269,8 @@
 
       .border-box2__case{
         @include media-sp {
-      
+          width: vw(247);
+          margin:0 auto vw(34);
         }
       
         @include media-pc {
@@ -253,7 +285,7 @@
 
         .case-item{
           @include media-sp {
-            
+            margin-bottom: vw(15);
           }
         
           @include media-pc {
@@ -266,7 +298,8 @@
             color: var(--blue);
             text-align: center;
             @include media-sp {
-        
+              @include SP-Regular-Bold();
+              margin-top: vw(8);
             }
           
             @include media-pc {
@@ -279,22 +312,13 @@
 
       .border-box2__txt1{
         @include media-sp {
-          
+          width: vw(301);
+          margin:0 auto vw(32);
         }
       
         @include media-pc {
           width: per(612, $w-pc);
           margin:0 auto rem(30);
-        }
-      }
-
-      p{
-
-        @include media-sp {
-        
-        }
-      
-        @include media-pc {
         }
       }
     }
@@ -305,7 +329,8 @@
       position:relative;
       background-color: var(--white);
       @include media-sp {
-        
+        border: vw(3) solid var(--blue);
+        padding: vw(82) 0 vw(30);
       }
     
       @include media-pc {
@@ -320,7 +345,8 @@
         margin:0 auto;
         
         @include media-sp {
-          
+          top: vw(-51);
+          width: vw(322);
         }
       
         @include media-pc {
@@ -331,7 +357,10 @@
 
       .border-box3__case{
         @include media-sp {
-      
+          display: flex;
+          // align-items: flex-end;
+          flex-wrap: wrap;
+          justify-content: center;
         }
       
         @include media-pc {
@@ -345,6 +374,42 @@
         .case-item{
           @include media-sp {
             
+            &:nth-of-type(1){
+              width: 100%;
+              margin-bottom: vw(15);
+
+              p{
+                width: vw(239);
+                margin:0 auto vw(15);
+              }
+
+              img{
+                width: vw(185);
+                margin:0 auto;
+              }
+
+            }
+            &:nth-of-type(2){
+              width: 100%;
+              margin-bottom: vw(34);
+
+              img{
+                width: vw(286);
+                margin:0 auto;
+              }
+            }
+            &:nth-of-type(3),
+            &:nth-of-type(4){
+              width: vw(147);
+
+              p{
+                margin-top: vw(17);
+              }
+            }
+
+            &:nth-of-type(4){
+              margin-left: vw(16);
+            }
           }
         
           @include media-pc {
@@ -376,7 +441,9 @@
           p{
             text-align: center;
             @include media-sp {
-        
+              @include SP-Medium-bold();
+              border: vw(2) solid var(--black);
+              padding: vw(6);
             }
           
             @include media-pc {
@@ -398,7 +465,7 @@
 
       .border-box3__txt{
         @include media-sp {
-          
+          margin-top: vw(15);
         }
       
         @include media-pc {
@@ -409,7 +476,7 @@
           text-align: center;
 
           @include media-sp {
-          
+            @include SP-Regular();
           }
         
           @include media-pc {

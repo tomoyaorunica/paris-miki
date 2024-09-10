@@ -5,16 +5,19 @@
 
   $w-pc : 1024;
 
+  background-size  : 100% auto;
+  background-repeat  : repeat-y;
+  background-position: center top;
 
   @include media-sp {
-      
+    background-image : url(/assets/img/common/bg_mosaic_navy_sp.jpg);
+
+    padding-top: vw(64);
+    padding-bottom: vw(64);
   }
 
   @include media-pc {
-    background-image : url(/assets/img/common/bg_mosaic_navy.jpg);
-    background-size  : 100% auto;
-    background-repeat  : repeat-y;
-    background-position: center top;
+    background-image : url(/assets/img/common/bg_mosaic_navy_pc.jpg);
 
     padding-top: rem(128);
     padding-bottom: rem(128);
@@ -23,7 +26,7 @@
   
   .p-top-sec3__inner{
     @include media-sp {
-      
+      @include center-sp();
     }
   
     @include media-pc {
@@ -34,7 +37,7 @@
 
     h2{
       @include media-sp {
-      
+        margin-bottom: vw(52);
       }
     
       @include media-pc {
@@ -45,8 +48,11 @@
     .border-box{
       position:relative;
       background-color: var(--blue);
+
       @include media-sp {
-        
+        border: vw(2) solid var(--white);
+        padding: vw(37) 0 vw(14);
+        margin-bottom: vw(34);
       }
     
       @include media-pc {
@@ -72,7 +78,8 @@
         background-color: var(--white);
 
         @include media-sp {
-      
+          width: vw(2);
+          height: vw(32);
         }
       
         @include media-pc {
@@ -94,7 +101,9 @@
         background-color: var(--white);
 
         @include media-sp {
-          
+          top: vw(-20);
+          width: vw(247);
+          height: vw(40);
         }
       
         @include media-pc {
@@ -109,7 +118,7 @@
           @include font-en-reg();
   
           @include media-sp {
-          
+            @include font-vw(20px, 20px, 0.8px);
           }
         
           @include media-pc {
@@ -132,7 +141,8 @@
         
         .txt1{
           @include media-sp {
-      
+            @include SP-Large();
+            margin-bottom: vw(16);
           }
         
           @include media-pc {
@@ -143,7 +153,8 @@
         
         .txt2{
           @include media-sp {
-      
+            @include SP-Regular();
+            margin-top: vw(14);
           }
         
           @include media-pc {

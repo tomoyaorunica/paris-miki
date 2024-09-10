@@ -5,16 +5,18 @@
 
   $w-pc : 1024;
 
+  background-size  : 100% auto;
+  background-repeat  : repeat-y;
+  background-position: center top;
 
   @include media-sp {
-      
+    background-image : url(/assets/img/common/bg_mosaic_blue_sp.jpg);
+    padding-top: vw(64);
+    padding-bottom: vw(32);
   }
 
   @include media-pc {
-    background-image : url(/assets/img/common/bg_mosaic_blue.jpg);
-    background-size  : 100% auto;
-    background-repeat  : repeat-y;
-    background-position: center top;
+    background-image : url(/assets/img/common/bg_mosaic_blue_pc.jpg);
 
     padding-top: rem(128);
     padding-bottom: rem(64);
@@ -23,7 +25,7 @@
   
   .p-top-sec4__inner{
     @include media-sp {
-      
+      @include center-sp();
     }
   
     @include media-pc {
@@ -34,7 +36,8 @@
 
     h2{
       @include media-sp {
-      
+        width: vw(301);
+        margin:0 auto vw(32);
       }
     
       @include media-pc {
@@ -45,7 +48,8 @@
 
     .p-top-sec4__pd{
       @include media-sp {
-      
+        width: vw(185);
+        margin:0 auto vw(32);
       }
     
       @include media-pc {
@@ -57,7 +61,8 @@
     .p-top-sec4__link{
       background-color: var(--blue);
       @include media-sp {
-      
+        border-radius: vw(8);
+        padding: vw(16) per(64, $w-pc);
       }
     
       @include media-pc {
@@ -67,7 +72,7 @@
 
       .c-btn-round2{
         @include media-sp {
-          
+          margin-bottom: vw(9);
         }
       
         @include media-pc {
@@ -83,7 +88,7 @@
         font-weight: 400;
 
         @include media-sp {
-      
+          @include font-vw(12px, 18px);
         }
       
         @include media-pc {

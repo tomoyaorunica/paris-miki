@@ -8,7 +8,7 @@
   position:relative;
 
   @include media-sp {
-      
+    margin-bottom: vw(30);
   }
 
   @include media-pc {
@@ -18,7 +18,10 @@
   .p-top-kv__inner{
     position:relative;
     @include media-sp {
-      
+      padding-top: vw(24);
+      margin-bottom: vw(33);
+      // padding-bottom: vw(24);
+      height: vw(387);
     }
   
     @include media-pc {
@@ -38,7 +41,7 @@
       z-index: 1;
       margin:0 auto;
       @include media-sp {
-      
+        width: vw(289.95);
       }
     
       @include media-pc {
@@ -80,7 +83,6 @@
 
   .p-top-kv__lead{
     @include media-sp {
-      
     }
   
     @include media-pc {
@@ -95,7 +97,8 @@
     font-weight: 700;
 
     @include media-sp {
-      
+      @include SP-Medium-statement();
+      margin-bottom: vw(33);
     }
   
     @include media-pc {
@@ -105,7 +108,8 @@
 
   h2{
     @include media-sp {
-      
+      width: vw(265);
+      margin:0 auto vw(34);
     }
   
     @include media-pc {
@@ -115,13 +119,13 @@
   }
 
   .logo-pd{
+    margin:0 auto;
     @include media-sp {
-      
+      width: vw(223);
     }
   
     @include media-pc {
       width: per(358, 1001);
-      margin:0 auto;
     }
   }
 }
