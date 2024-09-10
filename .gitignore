@@ -15,7 +15,6 @@ Thumbs.db
 node_modules
 # dist
 *.local
-dist
 _temp_
 _srdb_
 _docs

@@ -180,7 +180,7 @@ $vw: math.div(1, $w-sp);
 
   // px付きの場合は削除
   $size : strip-unit($size);
-  font-size: $size * 16 / 10 * 1rem;
+  font-size: $size * 16 * .1rem;
 
   @if ($height) {
     $height : strip-unit($height);
@@ -189,7 +189,7 @@ $vw: math.div(1, $w-sp);
 
   @if ($letter-spacing) {
     $letter-spacing : strip-unit($letter-spacing);
-    letter-spacing: $letter-spacing * 16 / 10 * 1rem;
+    letter-spacing: $letter-spacing * 16 * .1rem;
   }
 }
 
