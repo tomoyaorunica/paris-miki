@@ -1,0 +1,155 @@
+@use "@/scss/import" as *;
+
+.-intro{
+  .p-top-intro{
+    // visibility: visible;
+  }
+}
+
+.-no-intro{
+  .p-top-intro{
+    display: none;
+  }
+}
+
+.p-top-intro{
+  position: fixed;
+  left: 0;
+  width: 100%;
+  z-index: 101;
+
+  // visibility: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @include media-sp {
+    top: 120px;
+    height: calc(100vh - 120px);
+    height: calc(100dvh - 120px);
+  }
+
+  @include media-pc {
+    top: 90px;
+    height: calc(100vh - 90px);
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background-color: var(--white);
+  }
+
+  &.-show{
+
+    .p-top-intro__inner{
+      
+      @include media-sp {
+
+        p{
+          span.line-sp{
+            $duration : 1.5s;
+            $delay    : 0s;
+  
+            opacity    : 1;
+            visibility : visible;
+            transform  : translate3d(0,0,0);
+  
+            transition : opacity $duration $SineInOut, transform $duration $Power3Out, visibility $duration;
+
+            $delay2   : .1;
+
+            &[data-line-id="1"]{ transition-delay: #{1 * $delay2}s; }
+            &[data-line-id="2"]{ transition-delay: #{2 * $delay2}s; }
+            &[data-line-id="3"]{ transition-delay: #{3 * $delay2}s; }
+            &[data-line-id="4"]{ transition-delay: #{4 * $delay2}s; }
+            &[data-line-id="5"]{ transition-delay: #{5 * $delay2}s; }
+            &[data-line-id="6"]{ transition-delay: #{6 * $delay2}s; }
+            &[data-line-id="7"]{ transition-delay: #{7 * $delay2}s; }
+            &[data-line-id="8"]{ transition-delay: #{8 * $delay2}s; }
+            &[data-line-id="9"]{ transition-delay: #{9 * $delay2}s; }
+          }
+        }
+        
+      }
+    
+      @include media-pc {
+
+        p{
+          span.line-pc{
+            $duration : 1.5s;
+            $delay    : 0s;
+  
+            opacity    : 1;
+            visibility : visible;
+            transform  : translate3d(0,0,0);
+  
+            transition : opacity $duration $SineInOut, transform $duration $Power3Out, visibility $duration;
+  
+  
+            @for $i from 1 through 7 {
+              &:nth-of-type(#{$i}){
+                   transition-delay: #{$i * .17 + .1}s;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.-hide{
+    opacity: 0;
+    visibility: hidden;
+
+    $dur : 1s;
+    
+    transition: opacity $dur $SineInOut, visibility 0s $dur;
+  }
+
+
+  .p-top-intro__inner{
+    position:relative;
+    @include media-sp {
+    }
+  
+    @include media-pc {
+    }
+      
+    p{
+      text-align: center;
+      font-weight: 700;
+
+      @include media-sp {
+        @include SP-Medium-statement();
+
+        span.line-sp{
+          opacity    : 0;
+          visibility : hidden;
+          display    : inline-block;
+
+          transform  : translate3d(0,vw(70),0);
+        }
+      }
+    
+      @include media-pc {
+        @include font-rem(1.5rem, 2.7rem, 0.24rem);
+
+        span.line-pc{
+          opacity    : 0;
+          visibility : hidden;
+          display    : inline-block;
+
+          transform  : translate3d(0,100px,0);
+        }
+      }
+
+    }
+  }
+}

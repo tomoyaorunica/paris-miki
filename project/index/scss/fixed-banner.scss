@@ -17,7 +17,7 @@
   }
 
   @include media-pc {
-		right: rem(32);
+		right: rem(32 + 65);
 		bottom: rem(32);
     z-index: 100;
     width: rem(320);

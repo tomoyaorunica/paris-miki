@@ -1,6 +1,7 @@
 
 import _ from '@/js/utils/Util'
 import EventEmitter from '@/js/events/EventEmitter'
+import GlobalData from '@/js/model/GlobalData'
 
 export default class Banner
 {
@@ -12,15 +13,25 @@ export default class Banner
     this.sec4_link = _.selector(".p-top-sec4__link")
 
 
+    EventEmitter.ee.on("intro-end", () =>
+    {
+      let wait = 1.5
+
+      _.delayedCall(() =>
+      {
+        this.run()
+      }, wait)
+    })
+
     EventEmitter.ee.on("loaded:once", () =>
     {
+      if(GlobalData.hasIntro) return
       let wait = .8
 
       _.delayedCall(() =>
       {
         this.run()
       }, wait)
-      
     })
 
   }

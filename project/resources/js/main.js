@@ -17,6 +17,29 @@ export default class Main
 {
   constructor()
   {
+
+    GlobalData.hasIntro = false
+    GlobalData.isIntroEnd = true
+
+    if(GlobalData.isTop)
+    {
+      if (!sessionStorage.getItem('introShown'))
+      {
+        GlobalData.hasIntro = true
+        GlobalData.isIntroEnd = false
+        sessionStorage.setItem('introShown', 'true');
+      }
+    }
+
+    // GlobalData.hasIntro = true
+    // GlobalData.isIntroEnd = false
+
+    const container = _.selector(".l-container")
+    GlobalData.hasIntro ? _.addClass(container, "-intro") : _.addClass(container, "-no-intro")
+
+
+
+
     gsap.registerPlugin(ScrollToPlugin)
 
     //-------------------------
