@@ -31,5 +31,13 @@ export default class Sec0_Intro
 
       EventEmitter.ee.emit("intro-end")
     }, wait)
+
+
+    wait += 1
+
+    _.delayedCall(() =>
+    {
+      _.addClass(this.intro, "-none")
+    }, wait)
   }
 }

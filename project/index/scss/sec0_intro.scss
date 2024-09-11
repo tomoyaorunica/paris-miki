@@ -108,9 +108,16 @@
     opacity: 0;
     visibility: hidden;
 
+    @include userSelectNone();
+    @include pointerEventsNone();
+
     $dur : 1s;
     
     transition: opacity $dur $SineInOut, visibility 0s $dur;
+  }
+
+  &.-none{
+    display: none;
   }
 
 
