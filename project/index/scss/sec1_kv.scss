@@ -8,7 +8,7 @@
   position:relative;
 
   @include media-sp {
-    margin-bottom: vw(30);
+    margin-bottom: vw(32);
   }
 
   @include media-pc {
@@ -109,12 +109,12 @@
   h2{
     @include media-sp {
       width: vw(265);
-      margin:0 auto vw(34);
+      margin:0 auto vw(33);
     }
   
     @include media-pc {
-      margin-top: rem(44);
-      margin-bottom: rem(60);
+      margin-top: rem(62);
+      margin-bottom: rem(64);
     }
   }
 

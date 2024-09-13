@@ -234,12 +234,16 @@
 
   p{
     @include media-sp {
-      @include SP-Label();
+      // @include SP-Label();
+      @include font-vw(14px * 0.75, 19.6px * 0.75, 1.12px);
       padding: .7em 0 .75em;
     }
   
     @include media-pc {
-      @include PC-Label();
+      // @include PC-Label();
+      @include font-rem(1.125rem * 0.75, 1.575rem * 0.75, 0.09rem);
+      font-weight: 500;
+
       padding: .55em 0 .65em;
     }
   }
@@ -251,17 +255,17 @@
     margin: auto;
     transform: rotate(-45deg);
     @include media-sp {
-      right: vw(20);
-      width: vw(8);
-      height: vw(8);
+      right: vw(20 * .75);
+      width: vw(7);
+      height: vw(7);
       border-right: vw(2) solid var(--black);
       border-bottom: vw(2) solid var(--black);
     }
   
     @include media-pc {
-      right: rem(22);
-      width: rem(10);
-      height: rem(10);
+      right: rem(22 * .75);
+      width: rem(8);
+      height: rem(8);
       border-right: 2px solid var(--black);
       border-bottom: 2px solid var(--black);
     }

@@ -12,44 +12,7 @@
   
     @include media-pc {
     }
-
-    h3{
-      @include media-sp {
-        margin-bottom: vw(32);
-      }
     
-      @include media-pc {
-        width: per(474, $w-pc);
-        margin:0 auto rem(64);
-      }
-
-
-
-      img{
-        @include media-sp {
-          width: vw(221);
-          margin:0 auto vw(7);
-        }
-      
-        @include media-pc {
-          
-        }
-      }
-
-      span{
-        text-align: center;
-        display: block;
-        @include media-sp {
-          @include SP-Medium-bold();
-        }
-      
-        @include media-pc {
-          @include PC-Medium-bold();
-          margin-top: rem(15);
-        }
-      }
-    }
-
     .border-box1{
       background-color: var(--white);
       @include media-sp {
@@ -199,6 +162,22 @@
         margin-bottom: rem(141);
       }
 
+
+
+      >p{
+        text-align: center;
+
+        @include media-sp {
+          @include SP-Medium-statement();
+          margin-bottom: vw(33);
+        }
+      
+        @include media-pc {
+          @include PC-Medium-statement();
+          margin-bottom: rem(30);
+        }
+      }
+
       &::after {
         content: "";
         position: absolute;
@@ -270,7 +249,7 @@
       .border-box2__case{
         @include media-sp {
           width: vw(247);
-          margin:0 auto vw(34);
+          margin:0 auto vw(32);
         }
       
         @include media-pc {
@@ -318,7 +297,7 @@
       
         @include media-pc {
           width: per(612, $w-pc);
-          margin:0 auto rem(30);
+          margin:0 auto rem(32);
         }
       }
     }

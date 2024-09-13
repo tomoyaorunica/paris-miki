@@ -36,12 +36,12 @@
 
     h2{
       @include media-sp {
-        width: vw(301);
+        width: vw(303);
         margin:0 auto vw(32);
       }
     
       @include media-pc {
-        width: per(594, $w-pc);
+        width: per(619, $w-pc);
         margin:0 auto rem(64);
       }
     }
