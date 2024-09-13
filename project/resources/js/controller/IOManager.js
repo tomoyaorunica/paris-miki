@@ -1,4 +1,5 @@
 import _ from '@/js/utils/Util'
+import GlobalData from '@/js/model/GlobalData'
 
 export default class IOManager
 {
@@ -8,7 +9,7 @@ export default class IOManager
     _.selectorAll("[data-inview]").forEach((el, i) =>
     {
       // const rootMargin1 = el.dataset.inviewRootMargin || '0% 0% -5% 0%'
-      const rootMargin1 = el.dataset.inviewRootMargin || '0% 0% 0% 0%'
+      const rootMargin1 = GlobalData.isSPView ? (el.dataset.inviewRootMargin || '0% 0% -10% 0%') : (el.dataset.inviewRootMargin || '0% 0% -2% 0%')
       const options1 = {
           rootMargin: rootMargin1,
           threshold: [0, 1]

@@ -28,8 +28,8 @@ export default class Main
       sessionStorage.setItem('introShown', 'true');
     }
 
-    // GlobalData.hasIntro = true
-    // GlobalData.isIntroEnd = false
+    GlobalData.hasIntro = true
+    GlobalData.isIntroEnd = false
 
     const container = _.selector(".l-container")
     GlobalData.hasIntro ? _.addClass(container, "-intro") : _.addClass(container, "-no-intro")

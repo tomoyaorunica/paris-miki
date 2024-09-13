@@ -8,11 +8,11 @@
   will-change: opacity, transform, visibility;
 
   @include media-sp {
-    transform: translate3d(0,vw(140),0);
+    transform: translate3d(0,vw(100),0);
   }
 
   @include media-pc {
-    transform: translate3d(0,150px,0);
+    transform: translate3d(0,rem(150),0);
   }
 
 
@@ -25,7 +25,7 @@
     $delay    : 0s;
 
     transition :
-        opacity $duration $SineOut,
+        opacity $duration $SineInOut,
         transform $duration $Power3Out,
         visibility $duration;
 
