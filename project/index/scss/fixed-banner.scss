@@ -114,16 +114,18 @@
     small{
       display: block;
       color: var(--white-semi);
-      font-weight: 400;
 
       @include media-sp {
+        text-align: center;
         margin-top: vw(8 * 0.75);
-        @include font-vw(8px, 12px);
+        @include font-vw(12px * 0.8, 18px * 0.8);
+        font-weight: 400;
+        // @include SP-annotation();
       }
     
       @include media-pc {
         margin-top: rem(6);
-        @include font-rem(0.75rem, 1.125rem);
+        @include PC-annotation();
       }
     }
 

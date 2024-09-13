@@ -24,6 +24,23 @@
     }
 
     h2{
+
+      opacity    : 0;
+      visibility : hidden;
+      transform  : scale(.8);
+
+      &.-inview{
+        $duration : 1.2s;
+        $delay    : 0s;
+
+        opacity    : 1;
+        visibility : visible;
+        transform  : scale(1);
+
+        transition : opacity $duration $SineInOut, transform $duration $Power3Out, visibility $duration;
+        transition-delay : $delay;
+      }
+      
       @include media-sp {
         width: vw(273);
         margin:0 auto vw(32);
@@ -228,6 +245,39 @@
 
   .p-top-sec2__pop__desc{
     text-align: center;
+
+
+    visibility: hidden;
+    opacity: 0;
+    
+    will-change: opacity, transform, visibility;
+
+    @include media-sp {
+      transform: translate3d(0,vw(140),0);
+    }
+
+    @include media-pc {
+      transform: translate3d(0,120px,0);
+    }
+
+
+    &.-inview{
+      opacity    : 1;
+      visibility : visible;
+      transform: translate3d(0,0,0);
+
+      $duration : .8s;
+      $delay    : .3s;
+
+      transition :
+          opacity $duration $SineInOut,
+          transform $duration $Power3Out,
+          visibility $duration;
+
+      transition-delay : $delay;
+    }
+
+
     @include media-sp {
       margin-bottom: vw(100);
     }

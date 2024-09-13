@@ -3,7 +3,7 @@ import GlobalData from '@/js/model/GlobalData'
 import Event from '@/js/events/Event'
 import DisableCover from '@/js/controller/DisableCover'
 import EventEmitter from '@/js/events/EventEmitter'
-// import IOManager from '@/js/controller/IOManager'
+import IOManager from '@/js/controller/IOManager'
 import Scroll from '@/js/utils/Scroll'
 // import Common from '@/js/view/common/Common'
 
@@ -27,8 +27,6 @@ export default class Main
       GlobalData.isIntroEnd = false
       sessionStorage.setItem('introShown', 'true');
     }
-
-    console.log(GlobalData.hasIntro)
 
     // GlobalData.hasIntro = true
     // GlobalData.isIntroEnd = false
@@ -128,11 +126,18 @@ export default class Main
         _.delayedCall(() =>
         {
           EventEmitter.ee.emit("loaded:once")
+
+          // if(!GlobalData.hasIntro) 
+            this.setIO()
         }, 1/30)
       }
     })
   }
 
+  setIO()
+  {
+    IOManager.init()
+  }
 
   ////////////////////////////////////////////////////////////
 

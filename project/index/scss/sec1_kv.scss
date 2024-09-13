@@ -8,18 +8,18 @@
   position:relative;
 
   @include media-sp {
-    margin-bottom: vw(32);
+    margin-bottom: vw(48);
   }
 
   @include media-pc {
-    margin-bottom: rem(64);
+    margin-bottom: rem(96);
   }
 
   .p-top-kv__inner{
     position:relative;
     @include media-sp {
       padding-top: vw(24);
-      margin-bottom: vw(33);
+      margin-bottom: vw(48);
       // padding-bottom: vw(24);
       height: vw(387);
     }
@@ -27,7 +27,7 @@
     @include media-pc {
       padding-top: rem(48);
       padding-bottom: rem(48);
-      margin-bottom: rem(64);
+      margin-bottom: rem(98);
       // padding-top: 3.8%;
       // padding-bottom: 3.8%;
 
@@ -98,7 +98,7 @@
 
     @include media-sp {
       @include SP-Medium-statement();
-      margin-bottom: vw(33);
+      margin-bottom: vw(48);
     }
   
     @include media-pc {
@@ -109,12 +109,12 @@
   h2{
     @include media-sp {
       width: vw(265);
-      margin:0 auto vw(33);
+      margin:0 auto vw(48);
     }
   
     @include media-pc {
-      margin-top: rem(62);
-      margin-bottom: rem(64);
+      margin-top: rem(95);
+      margin-bottom: rem(96);
     }
   }
 

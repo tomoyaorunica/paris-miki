@@ -9,7 +9,7 @@ $w-pc-margin : 20;
 $w-pc-inner : $w-pc - $w-pc-margin * 2; // 1400
 
 $w-sp       : 375;
-$w-sp-inner : 375 - 16 * 2; // 364
+$w-sp-inner : 375 - 16 * 2; // 343
 
 $bp-sp : 768px - 1px;
 $bp-pc : 768px;
@@ -518,6 +518,12 @@ $vw: math.div(1, $w-sp);
   font-weight: 500;
 }
 
+//@example  @include PC-annotation();
+@mixin PC-annotation() {
+  @include font-rem(0.75rem, 1.125rem);
+  font-weight: 400;
+}
+
 // -------------------------------
 
 //@example  @include SP-Medium-statement();
@@ -528,7 +534,7 @@ $vw: math.div(1, $w-sp);
 
 //@example  @include SP-Regular();
 @mixin SP-Regular() {
-  @include font-vw(14px, 23.8px, 1.12px);
+  @include font-vw(16px, 27.2px, 1.28px);
   font-weight: 500;
 }
 
@@ -554,4 +560,10 @@ $vw: math.div(1, $w-sp);
 @mixin SP-Large() {
   @include font-vw(24px, 28.8px, 1.92px);
   font-weight: 700;
+}
+
+//@example  @include SP-annotation();
+@mixin SP-annotation() {
+  @include font-vw(12px, 18px);
+  font-weight: 400;
 }
