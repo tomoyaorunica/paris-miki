@@ -25,3 +25,6 @@ PARIS MIKI Personal Direction
 
 
       width: per(474, $w-pc);
+
+
+      

@@ -1,0 +1,4 @@
+<picture>
+  {{#if sp}}<source srcset="{{path}}{{sp}}" media="{{media}}">{{/if}}
+  <img src="{{path}}{{pc}}" alt="{{alt}}"{{#if className}} class="{{className}}"{{/if}}{{#if loading}} loading="{{loading}}"{{/if}}{{#if width}} width="{{width}}"{{/if}}{{#if height}} height="{{height}}"{{/if}}>
+</picture>

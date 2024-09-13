@@ -97,7 +97,7 @@
           transition-delay : $delay;
 
           .attention{
-            $delay1: $delay + .15s;
+            $delay1: $delay + .2s;
             $dur : .4s;
 
             visibility : visible;
@@ -462,7 +462,7 @@
       background-color: var(--white);
       @include media-sp {
         border: vw(3) solid var(--black);
-        padding: vw(13) vw(16) vw(14);
+        padding: 0 0 vw(14);
       }
     
       @include media-pc {
@@ -473,6 +473,10 @@
       img{
         @include media-sp {
           margin-bottom: vw(20);
+          margin-top: vw(13);
+          margin-left: auto;
+          margin-right: auto;
+          width: vw(311);
         }
       
         @include media-pc {

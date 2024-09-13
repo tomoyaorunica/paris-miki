@@ -15,7 +15,7 @@ export default class Banner
 
     EventEmitter.ee.on("intro-end", () =>
     {
-      let wait = 1.5
+      let wait = 1
 
       _.delayedCall(() =>
       {

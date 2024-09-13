@@ -95,9 +95,9 @@ export default ({ mode }) => {
           resolve(__dirname, './project/_inc'), 
           resolve(__dirname, './project')
         ],
-        // helpers: {
-        //   replace_webp : (value) => value.replace(/jpg|png/g, "webp"),
-        // },
+        helpers: {
+          replace_webp : (value) => value.replace(/jpg|png/g, "webp"),
+        },
         context: {
           now      : Date.now(),
           base_url : 'https://www.paris-miki.co.jp/service/project/',

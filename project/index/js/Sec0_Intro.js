@@ -1,5 +1,6 @@
 
 import _ from '@/js/utils/Util'
+import Btn from '@/js/core/Btn'
 import GlobalData from '@/js/model/GlobalData'
 import EventEmitter from '@/js/events/EventEmitter'
 
@@ -17,6 +18,11 @@ export default class Sec0_Intro
     {
       this.start()
     }, wait)
+
+    new Btn(this.intro
+    ,() => {
+      this.hide()
+    })
   }
   
   start()
@@ -25,13 +31,19 @@ export default class Sec0_Intro
 
     let wait = 4
 
-    _.delayedCall(() =>
+    this.int = _.delayedCall(() =>
     {
-      _.addClass(this.intro, "-hide")
-
-      EventEmitter.ee.emit("intro-end")
+      this.hide()
     }, wait)
+  }
 
+  hide()
+  {
+    _.killDelayedCall(this.int)
+    let wait = 0
+
+    _.addClass(this.intro, "-hide")
+    EventEmitter.ee.emit("intro-end")
 
     wait += 1
 

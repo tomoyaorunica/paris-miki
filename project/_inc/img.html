@@ -1,4 +1,14 @@
 <picture>
-  {{#if sp}}<source srcset="{{path}}{{sp}}" media="{{media}}">{{/if}}
+{{#if webp}}
+  {{#if sp}}
+    <source type="image/webp" srcset="{{path}}{{replace_webp sp}}" media="{{media}}">
+  {{/if}}
+  {{#if pc}}
+    <source type="image/webp" srcset="{{path}}{{replace_webp pc}}">
+  {{/if}}
+{{/if}}
+  {{#if sp}}
+    <source srcset="{{path}}{{sp}}" media="{{media}}">
+  {{/if}}
   <img src="{{path}}{{pc}}" alt="{{alt}}"{{#if className}} class="{{className}}"{{/if}}{{#if loading}} loading="{{loading}}"{{/if}}{{#if width}} width="{{width}}"{{/if}}{{#if height}} height="{{height}}"{{/if}}>
 </picture>

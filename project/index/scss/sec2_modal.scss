@@ -385,11 +385,11 @@
 
       @include media-sp {
         width: vw(114);
-        height: vw(38);
+        height: vw(44);
         border-radius: vw(38);
         padding: vw(4) vw(4);
 
-        bottom: vw(14);
+        bottom: vw(12);
         right: vw(13);
       }
     
@@ -403,9 +403,8 @@
       }
 
       .distance-txt{
-        font-weight: 400;
         @include media-sp {
-          @include font-vw(8px, 12px);
+          @include SP-annotation();
           margin-bottom: vw(-2);
         }
       
@@ -452,7 +451,7 @@
       .unit{
         @include media-sp {
           @include font-vw(10px, 17px, 0.8px);
-          margin-left: -.25em;
+          margin-left: -.4em;
         }
       
         @include media-pc {
