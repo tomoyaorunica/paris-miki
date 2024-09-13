@@ -35,7 +35,7 @@
       }
     
       @include media-pc {
-        padding: 0;
+        // padding: 0;
       }
     }
   }
@@ -60,7 +60,14 @@
   
     @include media-pc {
       border-radius: rem(8);
+
+      transition: background-color .25s $Power3Out, transform .25s $Power3Out;
     }
+    @include hover {
+      background-color: var(--blue2);
+      transform:scale(1.05);
+    }
+
   }
 
   p{
@@ -71,7 +78,7 @@
   
     @include media-pc {
       @include PC-Label();
-      padding: 1.1em 0;
+      padding: 1.0em 0 1.2em;
     }
   }
 
@@ -145,6 +152,14 @@
   }
 
   @include media-pc {
+    transition: transform .25s $Power3Out;
+  }
+  @include hover {
+    transform:scale(1.03);
+
+    .c-btn__arrow{
+      transform: translate3d(35%,0,0);
+    }
   }
 
   >div,a{
@@ -185,21 +200,37 @@
     top: 0;
     bottom: 0;
     margin: auto;
-    transform: rotate(-45deg);
     @include media-sp {
       right: vw(20);
       width: vw(8);
       height: vw(8);
-      border-right: vw(2) solid var(--black);
-      border-bottom: vw(2) solid var(--black);
     }
   
     @include media-pc {
       right: rem(22);
       width: rem(11);
       height: rem(11);
-      border-right: 2px solid var(--black);
-      border-bottom: 2px solid var(--black);
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+
+      transform: rotate(-45deg);
+
+      @include media-sp {
+        border-right: vw(2) solid var(--black);
+        border-bottom: vw(2) solid var(--black);
+      }
+    
+      @include media-pc {
+        border-right: 2px solid var(--black);
+        border-bottom: 2px solid var(--black);
+      }
     }
   }
 
@@ -253,21 +284,38 @@
     top: 0;
     bottom: 0;
     margin: auto;
-    transform: rotate(-45deg);
+
     @include media-sp {
       right: vw(20 * .75);
       width: vw(7);
       height: vw(7);
-      border-right: vw(2) solid var(--black);
-      border-bottom: vw(2) solid var(--black);
     }
   
     @include media-pc {
       right: rem(22 * .75);
       width: rem(8);
       height: rem(8);
-      border-right: 2px solid var(--black);
-      border-bottom: 2px solid var(--black);
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+
+      transform: rotate(-45deg);
+
+      @include media-sp {
+        border-right: vw(2) solid var(--black);
+        border-bottom: vw(2) solid var(--black);
+      }
+    
+      @include media-pc {
+        border-right: 2px solid var(--black);
+        border-bottom: 2px solid var(--black);
+      }
     }
   }
 

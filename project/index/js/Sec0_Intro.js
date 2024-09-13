@@ -11,7 +11,7 @@ export default class Sec0_Intro
 
     this.intro = _.selector(".p-top-intro")
 
-    let wait = .3
+    let wait = .1
 
     _.delayedCall(() =>
     {
@@ -23,7 +23,7 @@ export default class Sec0_Intro
   {
     _.addClass(this.intro, "-show")
 
-    let wait = 7
+    let wait = 4
 
     _.delayedCall(() =>
     {

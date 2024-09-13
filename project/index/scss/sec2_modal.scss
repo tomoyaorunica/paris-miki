@@ -53,6 +53,8 @@
 
     background-color: var(--blue);
 
+    transition: background-color .2s $Power3Out;
+
     @include media-sp {
       width: vw(48);
       height: vw(48);
@@ -61,6 +63,14 @@
     @include media-pc {
       width: rem(64);
       height: rem(64);
+    }
+    @include hover {
+      background-color: var(--blue2);
+
+
+      >div{
+        transform:scale(1.2);
+      }
     }
 
     >div{
@@ -79,6 +89,7 @@
       @include media-pc {
         width: rem(32);
         height: rem(32);
+        transition: transform .2s $Power3Out;
       }
   
       &::before,
@@ -113,6 +124,7 @@
     height: 100%;
 
     overflow-y: scroll;
+    overscroll-behavior-y: none;
   }
 
   .p-top-sec2__modal__inner2{
@@ -126,7 +138,7 @@
     @include media-sp {
       background-image : url(/assets/img/common/bg_mosaic_navy_sp.jpg);
       padding-top: vw(103);
-      padding-bottom: vw(61);
+      padding-bottom: vw(40);
     }
   
     @include media-pc {
