@@ -21,12 +21,16 @@ export default class Main
     GlobalData.hasIntro = false
     GlobalData.isIntroEnd = true
 
+    console.log(sessionStorage.getItem('introShown'))
+
     if (!sessionStorage.getItem('introShown'))
     {
       GlobalData.hasIntro = true
       GlobalData.isIntroEnd = false
       sessionStorage.setItem('introShown', 'true');
     }
+
+    console.log(sessionStorage.getItem('introShown'))
 
     // GlobalData.hasIntro = true
     // GlobalData.isIntroEnd = false
