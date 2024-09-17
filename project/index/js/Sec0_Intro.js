@@ -29,7 +29,7 @@ export default class Sec0_Intro
   {
     _.addClass(this.intro, "-show")
 
-    let wait = 2
+    let wait = 2.5
 
     this.int = _.delayedCall(() =>
     {
