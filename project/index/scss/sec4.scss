@@ -62,7 +62,7 @@
       background-color: var(--blue);
       @include media-sp {
         border-radius: vw(8);
-        padding: vw(16) per(64, $w-pc);
+        padding: vw(16) vw(16);
       }
     
       @include media-pc {
