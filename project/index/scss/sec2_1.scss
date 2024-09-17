@@ -73,11 +73,11 @@
       }
 
       @include media-sp {
-        padding-bottom: vw(37);
+        padding-bottom: vw(64);
       }
     
       @include media-pc {
-        padding-bottom: rem(100);
+        padding-bottom: rem(130);
       }
 
       &.-inview{
@@ -210,13 +210,12 @@
 
 
       @include media-sp {
-        width: vw(335);
+        width: vw(341);
         margin:0 auto vw(32);
       }
     
       @include media-pc {
-        // width: rem(701);
-        width: per(701, $w-pc);
+        width: per(783, $w-pc);
         margin:0 auto rem(64);
       }
 
@@ -239,8 +238,8 @@
       
         @include media-pc {
           top: -47%;
-          left: per(-130, 701);
-          width: per(280, 701);
+          left: per(-120, 783);
+          width: per(280, 783);
           transform-origin: 60% 100%;
         }
       }
@@ -568,6 +567,22 @@
   
     @include media-pc {
       transform: translate3d(0,rem(150),0);
+    }
+
+    sup{
+      font-size: 65%;
+      margin-left: -.2em;
+    }
+
+    small{
+      display: block;
+      @include media-sp {
+        @include SP-annotation();
+      }
+    
+      @include media-pc {
+        @include PC-annotation();
+      }
     }
   }
 }

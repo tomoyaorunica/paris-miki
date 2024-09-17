@@ -404,7 +404,7 @@
             }
             &:nth-of-type(2){
               width: 100%;
-              margin-bottom: vw(34);
+              margin-bottom: vw(31);
 
               img{
                 width: vw(286);
@@ -418,10 +418,15 @@
               p{
                 margin-top: vw(17);
               }
+              img{
+                width: vw(140);
+                margin:0 auto;
+              }
             }
 
             &:nth-of-type(4){
               margin-left: vw(16);
+
             }
           }
         
