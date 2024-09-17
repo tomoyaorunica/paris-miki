@@ -21,7 +21,7 @@ export default class Main
     GlobalData.hasIntro = false
     GlobalData.isIntroEnd = true
 
-    console.log(sessionStorage.getItem('introShown'))
+    // console.log(sessionStorage.getItem('introShown'))
 
     if (!sessionStorage.getItem('introShown'))
     {
@@ -30,7 +30,7 @@ export default class Main
       sessionStorage.setItem('introShown', 'true');
     }
 
-    console.log(sessionStorage.getItem('introShown'))
+    // console.log(sessionStorage.getItem('introShown'))
 
     // GlobalData.hasIntro = true
     // GlobalData.isIntroEnd = false
