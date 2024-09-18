@@ -5,6 +5,10 @@ replace_string="\\/common"
 find ./dist/ -name '*.html' -exec sed -i "" -e "s/$search_string/$replace_string/g" {} \;
 
 
+search_string2=\"assets
+replace_string2=\"\.\\/assets
+find ./dist/ -name '*.html' -exec sed -i "" -e "s/$search_string2/$replace_string2/g" {} \;
+
 # copy root common files
 # サイトの共通ファイルをdistにコピー
 cp -R project/public/common dist/
