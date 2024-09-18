@@ -370,6 +370,12 @@
         @include media-pc {
           @include PC-Label();
           margin-top: rem(16);
+
+          width: calc(100% - rem(164 - 5));
+        }
+
+        @media screen and (min-width: $bp-sp) and (max-width: 1040px) {
+          font-size: 1.8rem * .8 !important;
         }
       }
     }

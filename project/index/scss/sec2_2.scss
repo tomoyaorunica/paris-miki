@@ -70,14 +70,27 @@
 
         &.border-box1__txt2{
           position:relative;
-          white-space: nowrap;
           @include media-sp {
             margin-top: vw(8);
+            white-space: nowrap;
           }
         
           @include media-pc {
-            width: per(534, $w-pc);
+            width: per(534 + 7, $w-pc);
             margin-right: per(68, $w-pc);
+
+            span{
+              display: inline-block;
+            }
+          }
+
+
+
+          @media screen and (min-width: $bp-sp) and (max-width: 1000px) {
+
+            br{
+              display: none !important;
+            }
           }
           
         }
@@ -188,6 +201,7 @@
         @include media-pc {
           @include PC-Medium-statement();
           margin-bottom: rem(30);
+          padding: 0 1em;
         }
 
         [data-ruby] {
@@ -476,6 +490,10 @@
                 width: per(244, 260);
                 margin: rem(47) auto 0;
               }
+
+              span{
+                display: inline-block;
+              }
             }
           }
         }
@@ -499,6 +517,7 @@
         
           @include media-pc {
             @include PC-Regular();
+            padding: 0 2em;
           }
         }
       }
