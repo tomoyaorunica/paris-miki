@@ -104,8 +104,8 @@ export default ({ mode }) => {
           media    : '(max-width: 767px)',
 
           cmn_title    : 'PERSONAL DIRECTION ｜ メガネのパリミキ',
-          cmn_desc     : '眼を救え。パリミキだけの【最適視界】カウンセリング、 PERSONAL DIRECTIONはじまる。',
-          cmn_keywords : 'メガネ,めがね,眼鏡,パリミキ,メガネの三城,フレーム, PERSONAL DIRECTION,最適視界,カウンセリング',
+          cmn_desc     : '眼を救え。パリミキだけの【最適視界】カウンセリング、PERSONAL DIRECTIONはじまる。',
+          cmn_keywords : 'メガネ,めがね,眼鏡,パリミキ,メガネの三城,フレーム,PERSONAL DIRECTION,最適視界,カウンセリング',
           
           temp_dir : '',
           
