@@ -18,7 +18,8 @@
 
   @include media-pc {
 		right: rem(32 + 65);
-		bottom: rem(32);
+		// bottom: rem(32);
+		bottom: 30px;
     z-index: 100;
     // width: rem(320 * 0.75);
     width: rem(320 * 0.8);
