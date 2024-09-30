@@ -577,11 +577,11 @@
     small{
       display: block;
       @include media-sp {
-        @include SP-annotation();
+        @include SP-Regular();
       }
     
       @include media-pc {
-        @include PC-annotation();
+        @include PC-Regular();
       }
     }
     a{
