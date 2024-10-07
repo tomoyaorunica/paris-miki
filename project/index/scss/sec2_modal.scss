@@ -244,6 +244,20 @@
         padding: 0 1em;
       }
 
+      >p [data-ruby] {
+        position: relative;
+      }
+
+      >p [data-ruby]:before {
+        position: absolute;
+        top: -0.85em;
+        right: 0;
+        left: 0;
+        margin: auto;
+        content: attr(data-ruby);
+        font-size: 50%;
+      }
+
       p{
 
         @include media-sp {

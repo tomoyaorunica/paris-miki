@@ -103,9 +103,9 @@ export default ({ mode }) => {
           base_url : 'https://www.paris-miki.co.jp/service/project/',
           media    : '(max-width: 767px)',
 
-          cmn_title    : 'PERSONAL DIRECTION ｜ メガネのパリミキ',
-          cmn_desc     : '眼を救え。パリミキだけの【最適視界】カウンセリング、PERSONAL DIRECTIONはじまる。',
-          cmn_keywords : 'メガネ,めがね,眼鏡,パリミキ,メガネの三城,フレーム,PERSONAL DIRECTION,最適視界,カウンセリング',
+          cmn_title    : 'Personal Direction ｜ メガネのパリミキ',
+          cmn_desc     : '眼を救え。パリミキだけの【最適視界】カウンセリング、Personal Directionはじまる。',
+          cmn_keywords : 'メガネ,めがね,眼鏡,パリミキ,メガネの三城,フレーム,Personal Direction,最適視界,カウンセリング',
           
           temp_dir : '',
           
